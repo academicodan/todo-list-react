@@ -1,29 +1,31 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
 export default function App() {
-  const[tasks, setTask] = useState([])
-  const addStack = task => {
-    setTask([...tasks, task ])
-  }
+  const [tasks, setTask] = useState([]);
+  const addStack = (task) => {
+    setTask([...tasks, task]);
+  };
   return (
     <div className="App">
-      <Form onSave={addStack}/>
-      <List tasks={tasks}/>
+      <Form onSave={addStack} />
+      <List tasks={tasks} />
     </div>
   );
 }
 
-export function List(props){
-  const{ tasks } = props;
-  return(
-    <div>
-      {tasks.map(task => {
-        return(
-          <div>
+export function List(props) {
+  const { tasks } = props;
+  return (
+    <div className="task-list">
+      {tasks.map((task) => {
+        return (
+          <div className="task-card">
             <span>{task}</span>
-            <button>Delete</button>
-            <button>Check</button>
+            <div className="actions">
+              <button>Check</button>
+              <button>Delite</button>
+            </div>
           </div>
         );
       })}
@@ -31,13 +33,19 @@ export function List(props){
   );
 }
 
-export function Form(props){
-  const{ onSave } = props;
-  const[text, setText] = useState("");
-  return(
+export function Form(props) {
+  const { onSave } = props;
+  const [text, setText] = useState("");
+  return (
     <div>
-      <input onChange={e => setText(e.currentTarget.value)}/>
-      <button onClick={()=> onSave(text)}>Add</button>
+      <input
+        className="task-field"
+        placeholder="write the task"
+        onChange={(e) => setText(e.currentTarget.value)}
+      />
+      <button className="save-button" onClick={() => onSave(text)}>
+        Add
+      </button>
     </div>
   );
 }
