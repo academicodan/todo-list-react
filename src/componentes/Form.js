@@ -4,15 +4,22 @@ export default function Form(props) {
   const { onSave } = props;
   const [text, setText] = useState("");
   return (
-    <div>
+    <form onSubmit={(e) => e.preventDefault()}>
       <input
         className="task-field"
-        placeholder="write the task"
+        Placeholder="writh the task"
         onChange={(e) => setText(e.currentTarget.value)}
+        value={text || ""}
       />
-      <button className="save-button" onClick={() => onSave(text)}>
+      <button
+        className="save-button"
+        onClick={() => {
+          onSave(text);
+          setText(" ");
+        }}
+      >
         Add
       </button>
-    </div>
+    </form>
   );
 }
