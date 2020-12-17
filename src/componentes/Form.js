@@ -5,21 +5,23 @@ export default function Form(props) {
   const [text, setText] = useState("");
   return (
     <form onSubmit={(e) => e.preventDefault()}>
-      <input
-        className="task-field"
-        Placeholder="writh the task"
-        onChange={(e) => setText(e.currentTarget.value)}
-        value={text || ""}
-      />
-      <button
-        className="save-button"
-        onClick={() => {
-          onSave(text);
-          setText(" ");
-        }}
-      >
-        Add
-      </button>
+      <div className="ui action input">
+        <input
+          className="ui action input"
+          Placeholder="writh the task"
+          onChange={(e) => setText(e.currentTarget.value)}
+          value={text || ""}
+        />
+        <button
+          className="ui grey button"
+          onClick={() => {
+            onSave(text);
+            setText(" ");
+          }}
+        >
+          Add
+        </button>
+      </div>
     </form>
   );
 }

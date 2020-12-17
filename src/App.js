@@ -27,7 +27,8 @@ export default function App() {
   };
 
   return (
-    <div className="App">
+    <div className="ui container App">
+      <h3>Minha lista de tarefas</h3>
       <Form onSave={addTask} />
       <List
         tasks={tasks}

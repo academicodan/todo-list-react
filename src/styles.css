@@ -1,57 +1,9 @@
 .App {
-  font-family: sans-serif;
-  text-align: center;
-}
-
-.task-field {
-  font-size: 18px;
-  border-top-left-radius: 6px;
-  border-bottom-left-radius: 6px;
-  padding: 2px;
-  border: solid 1px #34626c;
-}
-
-.save-button {
-  font-size: 18px;
-  border-radius: 3px;
-  padding: 2px;
-  background-color: #839b97;
-  color: white;
-  border: solid 1px #34626c;
-  margin-left: 5px;
-}
-
-.task-card {
-  border: solid 1px #839b97;
-  width: 400px;
   padding-top: 15px;
-  margin-top: 5px;
 }
-
-.actions {
-  margin-top: 10px;
-  background-color: #839b97;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.actions > button {
-  border: none;
-  margin-right: 5px;
-  font-size: 14px;
-  padding: 5px;
-  background-color: #cfd3ce;
-  border-radius: 3px;
-}
-
-.actions > button:hover {
-  background-color: #c6b497;
-}
-
-.task-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.item-cards {
+  padding: 0px;
+  padding-top: 15px;
 }
 
 .complete {
