@@ -6,9 +6,11 @@ export default function List(props) {
       {tasks.map((task, index) => {
         return (
           <div className="task-card" key={index}>
-            <span>{task}</span>
+            <span className={task.isComplete ? "complete" : " "}>
+              {task.task}
+            </span>
             <div className="actions">
-              <button>Check</button>
+              <button onClick={() => props.toggleComplete(index)}>Check</button>
               <button onClick={() => props.deleteTask(index)}>Delite</button>
             </div>
           </div>

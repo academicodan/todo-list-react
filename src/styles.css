@@ -53,3 +53,8 @@
   flex-direction: column;
   align-items: center;
 }
+
+.complete {
+  text-decoration: line-through;
+  color: #34626c;
+}

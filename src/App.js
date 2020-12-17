@@ -6,8 +6,12 @@ import List from "./componentes/List";
 export default function App() {
   const [tasks, setTask] = useState([]);
 
-  const addStack = (task) => {
-    setTask([...tasks, task]);
+  const addTask = (task) => {
+    const newTask = {
+      task,
+      isComplete: false
+    };
+    setTask([...tasks, newTask]);
   };
 
   const deleteTask = (index) => {
@@ -16,10 +20,20 @@ export default function App() {
     setTask(newTasks);
   };
 
+  const toggleComplete = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].isComplete = !newTasks[index].isComplete;
+    setTask(newTasks);
+  };
+
   return (
     <div className="App">
-      <Form onSave={addStack} />
-      <List tasks={tasks} deleteTask={deleteTask} />
+      <Form onSave={addTask} />
+      <List
+        tasks={tasks}
+        deleteTask={deleteTask}
+        toggleComplete={toggleComplete}
+      />
     </div>
   );
 }
