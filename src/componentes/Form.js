@@ -1,24 +1,25 @@
 import React, { useState } from "react";
 
 export default function Form(props) {
-  const { onSave } = props;
-  const [text, setText] = useState("");
+  const { addTask } = props;
+  const [info, setInfo] = useState("");
   return (
     <form onSubmit={(e) => e.preventDefault()}>
       <div className="ui action input">
         <input
           className="ui action input"
-          Placeholder="writh the task"
-          onChange={(e) => setText(e.currentTarget.value)}
-          value={text || ""}
+          Placeholder="write the task"
+          onChange={(e) => setInfo(e.currentTarget.value)}
+          value={info || ""}
         />
         <button
           className="ui grey button"
           onClick={() => {
-            onSave(text);
-            setText(" ");
+            addTask(info);
+            setInfo(" ");
           }}
         >
+          <i class="sticky note outline icon"></i>
           Add
         </button>
       </div>

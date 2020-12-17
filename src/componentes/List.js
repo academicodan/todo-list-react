@@ -8,7 +8,7 @@ export default function List(props) {
           <li className="ui card">
             <div className="content" key={index}>
               <span className={task.isComplete ? "complete" : " "}>
-                {task.task}
+                {task.info}
               </span>
             </div>
             <div className="extra content">
@@ -16,13 +16,15 @@ export default function List(props) {
                 className="left floated like ui teal button"
                 onClick={() => props.toggleComplete(index)}
               >
+                <i class="check circle outline icon"></i>
                 Check
               </button>
               <button
                 className="right floated star ui black button"
                 onClick={() => props.deleteTask(index)}
               >
-                Delite
+                <i class="trash alternate outline icon"></i>
+                Delete
               </button>
             </div>
           </li>

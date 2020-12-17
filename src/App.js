@@ -8,7 +8,7 @@ export default function App() {
 
   const addTask = (task) => {
     const newTask = {
-      task,
+      info: task,
       isComplete: false
     };
     setTask([...tasks, newTask]);
@@ -29,7 +29,7 @@ export default function App() {
   return (
     <div className="ui container App">
       <h3>Minha lista de tarefas</h3>
-      <Form onSave={addTask} />
+      <Form addTask={addTask} />
       <List
         tasks={tasks}
         deleteTask={deleteTask}
