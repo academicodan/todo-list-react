@@ -9,7 +9,8 @@ export default function App() {
   const addTask = (task) => {
     const newTask = {
       info: task,
-      isComplete: false
+      isComplete: false,
+      id: tasks.length
     };
     setTask([...tasks, newTask]);
   };
@@ -26,6 +27,11 @@ export default function App() {
     setTask(newTasks);
   };
 
+  const editTask = (task) => {
+    const newTasks = tasks.map((t) => (t.id === task.id ? task : t));
+    setTask(newTasks);
+  };
+
   return (
     <div className="ui container App">
       <h3>Minha lista de tarefas</h3>
@@ -34,6 +40,7 @@ export default function App() {
         tasks={tasks}
         deleteTask={deleteTask}
         toggleComplete={toggleComplete}
+        editTask={editTask}
       />
     </div>
   );
